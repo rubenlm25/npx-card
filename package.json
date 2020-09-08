@@ -1,0 +1,97 @@
+{
+  "name": "npx-card",
+  "version": "0.0.1",
+  "description": "Personal npm card for Ruben Lomo Maestu (@rubenlm25)",
+  "main": "dist/card.js",
+  "unpkg": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rubenlm25/npx-card.git"
+  },
+  "scripts": {
+    "prepare": "node src/htmlify",
+    "prepublishOnly": "rm -rf dist && webpack"
+  },
+  "bin": {
+    "npx-card": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "index.html"
+  ],
+  "keywords": [
+    "card",
+    "npm",
+    "npm card",
+    "npx",
+    "npx card",
+    "business card"
+  ],
+  "author": "Ruben Lomo Maestu",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "ansi-to-html": "^0.6.9",
+    "babel-loader": "^8.0.4",
+    "boxen": "^2.1.0",
+    "chalk": "^2.4.1",
+    "chalker": "^1.0.0",
+    "lodash.get": "^4.4.2",
+    "webpack": "^4.28.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "myCard": {
+    "info": {
+      "name": "Ruben Lomo Maestu",
+      "handle": "rubenlm25",
+      "twitter": "lomaru25",
+      "npm": "rubenlomomaestu",
+      "github": "rubenlm25",
+      "linkedin": "rubenlomomaestu",
+      "work": "Junior Web Developper at Becode"
+    },
+    "data": [
+      "          <white>{{name}}</><green> / </><cyan>{{handle}}</>",
+      "",
+      {
+        "label": "<blue>Work</>",
+        "text": "{{work}}"
+      },
+      "",
+      {
+        "label": "Twitter",
+        "text": "https://twitter.com/<cyan>{{twitter}}</>",
+        "when": "{{twitter}}"
+      },
+      {
+        "label": "npm",
+        "text": "https://www.npmjs.com/<red>~{{npm}}</>",
+        "when": "{{npm}}"
+      },
+      {
+        "label": "GitHub",
+        "text": "https://github.com/<green>{{github}}</>",
+        "when": "{{github}}"
+      },
+      {
+        "label": "LinkedIn",
+        "text": "https://www.linkedin.com/in/<blue>{{linkedin}}</>",
+        "when": "{{linkedin}}"
+      },
+      {
+        "label": "Web",
+        "text": "<cyan>{{web}}</>",
+        "when": "{{web}}"
+      },
+      "",
+      {
+        "label": "Card",
+        "text": "<red>npx</> {{_packageName}}"
+      }
+    ]
+  }
+}
